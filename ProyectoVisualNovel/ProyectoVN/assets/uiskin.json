@@ -1,0 +1,110 @@
+{
+"com.badlogic.gdx.graphics.Color": {
+    "white": { "r": 1, "g": 1, "b": 1, "a": 1 },
+    "black": { "r": 0, "g": 0, "b": 0, "a": 1 },
+    "gray": { "r": 0.5, "g": 0.5, "b": 0.5, "a": 1 },
+    "marron_cozy": { "r": 0.26, "g": 0.18, "b": 0.15, "a": 1 },
+    "verde_menta": { "r": 0.45, "g": 0.67, "b": 0.49, "a": 1 },
+    "purpura_dulce": { "r": 0.63, "g": 0.48, "b": 0.73, "a": 1 },
+    "aguamarina": { "r": 0.5, "g": 0.9, "b": 0.85, "a": 1 },
+    "dorado_miau": { "r": 1, "g": 0.84, "b": 0, "a": 1 },
+    "crema": { "r": 0.98, "g": 0.96, "b": 0.89, "a": 1 }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable": {
+    "dialogDim": { "name": "white", "color": { "r": 0, "g": 0, "b": 0, "a": 0.6 } }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+    "default": { "font": "default-font", "fontColor": "crema" },
+    "titulo": { "font": "fuente-titulo", "fontColor": "dorado_miau" }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle": {
+    "default": { 
+        "font": "default-font", 
+        "fontColorUnselected": "crema", 
+        "selection": "selection", 
+        "fontColorSelected": "aguamarina" 
+    }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle": {
+    "default": { 
+        "vScroll": "default-scroll", 
+        "vScrollKnob": "default-round-large", 
+        "hScroll": "default-scroll", 
+        "hScrollKnob": "default-round-large",
+        "background": "default-rect" 
+    }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle": {
+    "default": {
+        "font": "default-font", 
+        "fontColor": "crema", 
+        "background": "default-select",
+        "scrollStyle": "default",
+        "listStyle": "default"
+    }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": {
+    "default": { 
+        "up": "default-round", 
+        "down": "default-round-down", 
+        "font": "default-font", 
+        "fontColor": "crema", 
+        "overFontColor": "aguamarina",
+        "disabledFontColor": "gray" 
+    },
+    "toggle": { 
+        "parent": "default", 
+        "checked": "default-round-down", 
+        "checkedFontColor": "dorado_miau",
+        "downFontColor": "purpura_dulce" 
+    }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {
+    "default": { 
+        "titleFont": "fuente-titulo", 
+        "background": "default-window", 
+        "titleFontColor": "dorado_miau" 
+    },
+    "dialog": { "parent": "default", "stageBackground": "dialogDim" }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {
+    "default": { 
+        "background": "textfield", 
+        "font": "default-font", 
+        "fontColor": "crema", 
+        "focusedFontColor": "white",
+        "selection": "selection", 
+        "cursor": "cursor" 
+    }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle": {
+    "default": { 
+        "checkboxOn": "check-on", 
+        "checkboxOff": "check-off", 
+        "font": "default-font", 
+        "fontColor": "crema",
+        "overFontColor": "aguamarina"
+    }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle": {
+    "default-horizontal": { "background": "default-slider", "knob": "default-slider-knob" },
+    "default-vertical": { "background": "default-slider", "knob": "default-round-large" }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle": {
+    "default-horizontal": { "parent": "default-horizontal" },
+    "default-vertical": { "parent": "default-vertical" }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Touchpad$TouchpadStyle": {
+    "default": { "background": "default-pane", "knob": "default-round-large" }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Tree$TreeStyle": {
+    "default": { "minus": "tree-minus", "plus": "tree-plus", "selection": "default-select-selection" }
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle": {
+    "default": {
+        "label": { "font": "default-font", "fontColor": "crema" },
+        "background": "default-pane", 
+        "wrapWidth": 150
+    }
+}
+}

@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: vn_database
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: VN_database
+      MARIADB_USER: alumno
+      MARIADB_PASSWORD: alumno
+    ports:
+      - "3307:3306"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: vn_phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root

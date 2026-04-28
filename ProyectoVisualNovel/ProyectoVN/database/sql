@@ -1,0 +1,75 @@
+DROP DATABASE IF EXISTS VN_database;
+CREATE DATABASE VN_database;
+USE VN_database;
+
+-- Crear tabla de Capítulos
+CREATE TABLE CAPITULO (
+    Id_capitulo INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(100) NOT NULL
+);
+
+-- Crear tabla de Narraciones (Nodos de la historia)
+CREATE TABLE NARRACION (
+    Id_narracion INT PRIMARY KEY AUTO_INCREMENT,
+    Id_capitulo INT,
+    Descripcion TEXT NOT NULL,
+    Id_nar_post INT DEFAULT NULL,
+    Fondo VARCHAR(100) DEFAULT 'default_bg.png',
+    Personaje_Izq VARCHAR(100) DEFAULT NULL,
+    Personaje_Der VARCHAR(100) DEFAULT NULL,
+    Musica VARCHAR(100) DEFAULT NULL,
+    Sonido_Efecto VARCHAR(100) DEFAULT NULL,
+    FOREIGN KEY (Id_capitulo) REFERENCES CAPITULO(Id_capitulo)
+);
+
+-- Crear tabla de Opciones (Bifurcaciones)
+CREATE TABLE OPCION (
+    Id_opcion INT PRIMARY KEY AUTO_INCREMENT,
+    Id_narracion_ant INT,
+    Id_narracion_post INT,
+    Descripcion TEXT,
+    FOREIGN KEY (Id_narracion_ant) REFERENCES NARRACION(Id_narracion),
+    FOREIGN KEY (Id_narracion_post) REFERENCES NARRACION(Id_narracion)
+);
+
+-- Tabla de Usuarios
+CREATE TABLE USUARIO (
+    Id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre_usuario VARCHAR(50) UNIQUE,
+    Password_usuario VARCHAR(100),
+    Pregunta_seguridad VARCHAR(255),
+    Respuesta_seguridad VARCHAR(255),
+    Fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Ult_capitulo INT,
+    FOREIGN KEY (Ult_capitulo) REFERENCES CAPITULO(Id_capitulo)
+);
+
+-- Tabla de Logros
+CREATE TABLE LOGRO (
+    Id_logro INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(100),
+    Descripcion TEXT,
+    Id_opcion INT, 
+    FOREIGN KEY (Id_opcion) REFERENCES OPCION(Id_opcion)
+);
+
+-- Relación muchos a muchos: Logros conseguidos por usuarios
+CREATE TABLE LOGRO_CONSEGUIDO (
+    Id_logro_conseguido INT PRIMARY KEY AUTO_INCREMENT,
+    Id_usuario INT NOT NULL,
+    Id_logro INT NOT NULL,
+    Fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY logro_unico_por_usuario (Id_usuario, Id_logro),
+    FOREIGN KEY (Id_usuario) REFERENCES USUARIO(Id_usuario),   
+    FOREIGN KEY (Id_logro) REFERENCES LOGRO(Id_logro)
+);
+
+-- Opciones elegidas por cada usuario
+CREATE TABLE HISTORIAL_OPCIONES (
+    Id_historial INT PRIMARY KEY AUTO_INCREMENT,
+    Id_usuario INT,
+    Id_opcion INT,
+    Fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (Id_usuario) REFERENCES USUARIO(Id_usuario),
+    FOREIGN KEY (Id_opcion) REFERENCES OPCION(Id_opcion)
+);

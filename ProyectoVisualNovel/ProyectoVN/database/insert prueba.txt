@@ -1,0 +1,35 @@
+INSERT INTO CAPITULO (Id_capitulo, Nombre) VALUES 
+(1, 'El Comienzo'),
+(2, 'El Encuentro'),
+(3, 'El Destino Final');
+
+-- CAPÍTULO 1: Introducción
+INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo, Musica) VALUES 
+(1, 1, 'Tras días de viaje, Laurie llega a los lindes del Bosque Susurrante. Una extraña calma reina en el ambiente.', 2, 'bosque.png', 'misterio.mp3'),
+(2, 1, 'El camino se vuelve angosto. Sientes que alguien, o algo, te observa desde la espesura.', 3, 'bosque.png','misterio.mp3');
+
+-- CAPÍTULO 2: El Anciano (Bifurcación)
+INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo, Personaje_Der) VALUES 
+(3, 2, 'Un Anciano Neutro emerge de los árboles. —Perdona, joven... ¿podrías ayudar a este viejo a cruzar el río? —pregunta con voz cansada.', NULL, 'bosque.png', 'anciano_neutro.png');
+
+-- Resultados de la decisión del Cap 2
+INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo, Personaje_Der) VALUES 
+(4, 2, 'El Anciano Sonriente te mira con gratitud. —Tienes un alma pura, Laurie. El destino te lo pagará—.', 6, 'bosque.png', 'anciano_sonriente.png'),
+(5, 2, 'El Anciano Neutro se aparta lentamente. —El orgullo es una carga pesada en este bosque...— suspira.', 6, 'bosque.png', 'anciano_neutro.png');
+
+-- CAPÍTULO 3: El Juicio Final
+INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo) VALUES 
+(6, 3, 'Llegas a la salida del bosque. Frente a ti se extiende un valle cubierto de niebla.', NULL, 'bosque.png');
+
+-- Escenas de los Finales (Invocadas por el método comprobarFinal)
+INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo, Personaje_Der, Musica) VALUES 
+(7, 3, '¡La niebla se disipa! El anciano era un Caballero Real bajo un disfraz. Te escolta hasta su majestuoso Castillo.', NULL, 'castillo.png', 'caballero.png', 'aventura.mp3'),
+(8, 3, 'Sin guía, das un paso en falso. El suelo cede y quedas atrapada en el Pantano eterno.', NULL, 'pantano.png', NULL, 'tristeza.mp3');
+
+INSERT INTO OPCION (Id_opcion, Id_narracion_ant, Descripcion, Id_narracion_post) VALUES 
+(1, 3, 'Ayudar al anciano con respeto y darle tu brazo.', 4),
+(2, 3, 'Ignorar al anciano y seguir adelante con frialdad.', 5);
+
+INSERT INTO LOGRO (Id_logro, Id_opcion, Nombre, Descripcion) VALUES 
+(1, 1, 'Corazón de Oro', 'Demostraste empatía ayudando al anciano del bosque.'),
+(2, 2, 'Alma Solitaria', 'Decidiste avanzar sin mirar atrás, ignorando al anciano.');

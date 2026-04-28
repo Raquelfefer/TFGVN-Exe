@@ -1,0 +1,53 @@
+-- P1: EL COMIENZO EN EL HOSPITAL
+INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Personaje_der, Fondo, Musica, Sonido_Efecto, id_nar_post) VALUES 
+(1, 1,  'Hospital CleverTown.', NULL, NULL, 'hospital_fuera.png', 'hospital_piano.mp3', NULL, 2),
+(2, 1, 'Laurie: Solo me queda una vida. No puedo perder. Si no, me tocará repetir todo el capítulo.\n Si Frank estuviera aquí seguro que me ayudaría con este nivel. A él siempre se le han dado bien los juegos de cartas.', 'laurie_consola.png', 'mama_durmiendo.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 3),
+(3, 1, 'Mamá: Laurie ¿todavía estás jugando a eso? Llevas ya 3 horas y el Dr. Andrews estará esperando para las pruebas.', 'laurie_consola.png', 'mama_despierta.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 4),
+(4, 1, 'Laurie: Pero mamá estoy a punto de acabar con el jefe final. Dame 5 minutos más. Además Frank todavía no ha vuelto y siempre me toca después de él.', 'laurie_consola.png', 'mama_despierta.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 5),
+(5, 1, 'Mamá: De acuerdo, pero solo hasta que Frank vuelva.', 'laurie_consola.png', 'mama_despierta.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 6),
+(6, 1, 'Frank: Ya he acabado con Andrews. Te toca Laurie.', 'laurie_consola.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 7),
+(7, 1, 'Frank: ¿Ya has acabado con Krog el Destructor? Pero si llevabas solo la mitad del juego ayer.', 'laurie_consola.png', 'frank_sorpresa.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 8),
+(8, 1, 'Laurie: Aún no lo he conseguido. No soy capaz de terminar el combate final. ¿Podrías ayudarme?', 'laurie_consola.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 9),
+(9, 1, 'Frank: ¡Sir Klauston al rescate, mi joven damisela! Yo le ayudaré. Déjame un momento para ver qué podemos hacer.', 'laurie_pijama.png', 'frank_consola.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 10),
+(10, 1, 'Frank: Derecha, derecha, arriba, abajo, derecha, izquierda y... ¡listo!', 'laurie_pijama.png', 'frank_consola.png', 'habitacion_hospital.png',  'hospital_piano.mp3', 'bips_consola.mp3',  11),
+(11, 1, 'Frank: ¡Listo! Sir Klauston ha vencido al malvado Krog y ha liberado a Silverhollow de su malvado yugo.', 'laurie_pijama.png', 'frank_consola.png', 'habitacion_hospital.png', 'hospital_piano.mp3', 'victoria.mp3', 12),
+(12, 1, 'Laurie: ¡Gracias Frank!', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 13),
+(13, 1, 'Frank: Sir Klauston señorita.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 14),
+(14, 1, 'Laurie: Jajajaja perdón Sir Klauston. Gracias por ayudarme.', 'laurie_risa.png', 'frank_heroe.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 15),
+(15, 1, 'Felisa: Vamos Laurie, no debemos hacer esperar a Andrews. Sabes que si tardamos mucho no te dará regalo.', 'laurie_pijama.png', 'enfermera_felisa.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 16),
+(16, 1, 'Laurie: ¡Adios Frank! Nos vemos después para nuestra partida de los jueves.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 17),
+(17, 1, 'Frank: No me voy a mover de aquí.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 18);
+
+
+
+REVISAR!!!!
+
+
+-- P3: LA PARTIDA DE ROL NOCTURNA
+INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
+(19, 'Laurie: Sir Klauston te encuentras en una encrucijada. A tu derecha tienes un camino de baldosas negras y rotas con espinas del tamaño de plátanos...', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_noche.png', 'noche_cozy.mp3', 20),
+(20, 'Laurie: ...A tu izquierda hay un camino de tierra con un bosque soleado con luciérnagas. Al fondo se ve un animal pequeño, blanco y parece que esta herido.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_noche.png', NULL, 21),
+(21, 'Laurie: ¿Qué camino elegirás? Piénsalo bien, el destino del reino depende de tí.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_noche.png', NULL, 22),
+(22, 'Frank: Según la información recabada hasta el momento creo que voy a elegir…', 'laurie_pijama.png', 'frank_pensativo.png', 'habitacion_noche.png', NULL, 23),
+(23, 'Mamá: Laurie deja descansar a la señora Klaus, estará cansada de todo el día y no creo que quiera escuchar vuestras historias.', 'mama_seria.png', 'sra_klaus.png', 'habitacion_noche.png', NULL, 24),
+(24, 'Señora Klaus: No te preocupes Jennifer, me gusta escuchar sus historias. Me recuerda a las radionovelas de mi juventud.', 'mama_seria.png', 'sra_klaus_sonrisa.png', 'habitacion_noche.png', NULL, 25),
+(25, 'Laurie: Vale mamá, ya me voy a mi habitación. Buenas noches señora Klaus. Mañana seguiremos por donde lo hemos dejado.', 'laurie_pijama.png', 'sra_klaus.png', 'habitacion_noche.png', NULL, 26),
+(26, 'Frank: ¡Buenas noches lady Whisksun! Que sueñe con las patitas suaves y peludas de pequeños gatitos.', 'laurie_pijama.png', 'frank_heroe.png', 'habitacion_noche.png', NULL, 27);
+
+-- P4: EL DOLOR DE CABEZA
+INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
+(27, 'Laurie: ¡Buenas noches mamá! ¡Buenas noches papá!', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital.png', 'hospital_noche_triste.mp3', 28),
+(28, 'Mamá: Buenas noches cariño. Descansa, mañana el Dr. Andrews quiere hacer unas pruebas específicas.', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital.png', NULL, 29),
+(29, 'Papá: Buenas noches llamita. Mañana podremos traer a lady Wishksun para visitarte.', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital.png', NULL, 30),
+(30, 'Laurie: ¡Gracias papá! Estoy deseando ver a mi peludita... Uff, tengo un dolor de cabeza horrible, todo me da vueltas.', 'laurie_dolor.png', 'mama_papa.png', 'habitacion_hospital.png', NULL, 31);
+
+-- P5: EL VACÍO
+INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
+(31, 'Laurie: Qué extraño. Parece que alguien está pidiendo ayuda pero no se ve nada. ¿MAMÁA? ¿PAPAA? ¡MAMAAAAA!', NULL, NULL, 'negro.png', 'perturbadora.mp3', 32);
+
+-- P6: TRANSFORMACIÓN (EL VALLE)
+INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
+(32, 'Whisksun: Uff me duele mucho el pecho. Qué golpe me he dado. ¿Dónde estoy?', 'whisk_gata_suelo.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', 33),
+(33, 'Whisksun: ¿Pero qué es esto? ¡Tengo patas! ¡Tengo cola! ¡Tengo orejas!', 'whisk_gata_sorpresa.png', NULL, 'valle_verde.png', NULL, 34),
+(34, 'Whisksun: Esto no puede estar pasando. Será un sueño. Si me pellizco seguro que despierto. ¡Ahhhh! No funciona. ¿Qué hago ahora?', 'whisk_gata_preocupada.png', NULL, 'valle_verde.png', NULL, NULL); 
+-- El id_siguiente NULL al final activará tus botones de opciones automáticamente
