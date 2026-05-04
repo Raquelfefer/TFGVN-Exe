@@ -1,3 +1,6 @@
+INSERT INTO CAPITULO (ID_CAPITULO, NOMBRE) VALUES
+(1, 'Prólogo');
+
 -- P1: EL COMIENZO EN EL HOSPITAL
 INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Personaje_der, Fondo, Musica, Sonido_Efecto, id_nar_post) VALUES 
 (1, 1,  'Hospital CleverTown.', NULL, NULL, 'hospital_fuera.png', 'hospital_piano.mp3', NULL, 2),
@@ -16,38 +19,20 @@ INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Pe
 (14, 1, 'Laurie: Jajajaja perdón Sir Klauston. Gracias por ayudarme.', 'laurie_risa.png', 'frank_heroe.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 15),
 (15, 1, 'Felisa: Vamos Laurie, no debemos hacer esperar a Andrews. Sabes que si tardamos mucho no te dará regalo.', 'laurie_pijama.png', 'enfermera_felisa.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 16),
 (16, 1, 'Laurie: ¡Adios Frank! Nos vemos después para nuestra partida de los jueves.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 17),
-(17, 1, 'Frank: No me voy a mover de aquí.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 18);
-
-
-
-REVISAR!!!!
-
-
--- P3: LA PARTIDA DE ROL NOCTURNA
-INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
-(19, 'Laurie: Sir Klauston te encuentras en una encrucijada. A tu derecha tienes un camino de baldosas negras y rotas con espinas del tamaño de plátanos...', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_noche.png', 'noche_cozy.mp3', 20),
-(20, 'Laurie: ...A tu izquierda hay un camino de tierra con un bosque soleado con luciérnagas. Al fondo se ve un animal pequeño, blanco y parece que esta herido.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_noche.png', NULL, 21),
-(21, 'Laurie: ¿Qué camino elegirás? Piénsalo bien, el destino del reino depende de tí.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_noche.png', NULL, 22),
-(22, 'Frank: Según la información recabada hasta el momento creo que voy a elegir…', 'laurie_pijama.png', 'frank_pensativo.png', 'habitacion_noche.png', NULL, 23),
-(23, 'Mamá: Laurie deja descansar a la señora Klaus, estará cansada de todo el día y no creo que quiera escuchar vuestras historias.', 'mama_seria.png', 'sra_klaus.png', 'habitacion_noche.png', NULL, 24),
-(24, 'Señora Klaus: No te preocupes Jennifer, me gusta escuchar sus historias. Me recuerda a las radionovelas de mi juventud.', 'mama_seria.png', 'sra_klaus_sonrisa.png', 'habitacion_noche.png', NULL, 25),
-(25, 'Laurie: Vale mamá, ya me voy a mi habitación. Buenas noches señora Klaus. Mañana seguiremos por donde lo hemos dejado.', 'laurie_pijama.png', 'sra_klaus.png', 'habitacion_noche.png', NULL, 26),
-(26, 'Frank: ¡Buenas noches lady Whisksun! Que sueñe con las patitas suaves y peludas de pequeños gatitos.', 'laurie_pijama.png', 'frank_heroe.png', 'habitacion_noche.png', NULL, 27);
-
--- P4: EL DOLOR DE CABEZA
-INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
-(27, 'Laurie: ¡Buenas noches mamá! ¡Buenas noches papá!', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital.png', 'hospital_noche_triste.mp3', 28),
-(28, 'Mamá: Buenas noches cariño. Descansa, mañana el Dr. Andrews quiere hacer unas pruebas específicas.', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital.png', NULL, 29),
-(29, 'Papá: Buenas noches llamita. Mañana podremos traer a lady Wishksun para visitarte.', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital.png', NULL, 30),
-(30, 'Laurie: ¡Gracias papá! Estoy deseando ver a mi peludita... Uff, tengo un dolor de cabeza horrible, todo me da vueltas.', 'laurie_dolor.png', 'mama_papa.png', 'habitacion_hospital.png', NULL, 31);
-
--- P5: EL VACÍO
-INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
-(31, 'Laurie: Qué extraño. Parece que alguien está pidiendo ayuda pero no se ve nada. ¿MAMÁA? ¿PAPAA? ¡MAMAAAAA!', NULL, NULL, 'negro.png', 'perturbadora.mp3', 32);
-
--- P6: TRANSFORMACIÓN (EL VALLE)
-INSERT INTO narracion (id, descripcion, personaje_izq, personaje_der, fondo, musica, id_siguiente) VALUES 
-(32, 'Whisksun: Uff me duele mucho el pecho. Qué golpe me he dado. ¿Dónde estoy?', 'whisk_gata_suelo.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', 33),
-(33, 'Whisksun: ¿Pero qué es esto? ¡Tengo patas! ¡Tengo cola! ¡Tengo orejas!', 'whisk_gata_sorpresa.png', NULL, 'valle_verde.png', NULL, 34),
-(34, 'Whisksun: Esto no puede estar pasando. Será un sueño. Si me pellizco seguro que despierto. ¡Ahhhh! No funciona. ¿Qué hago ahora?', 'whisk_gata_preocupada.png', NULL, 'valle_verde.png', NULL, NULL); 
--- El id_siguiente NULL al final activará tus botones de opciones automáticamente
+(17, 1, 'Frank: No me voy a mover de aquí.', 'laurie_pijama.png', 'frank_gorra.png', 'habitacion_hospital.png', 'hospital_piano.mp3', NULL, 18),
+(18, 1, 'Unas horas después....', NULL, NULL, 'fondo_negro.jpg', 'hospital_piano.mp3', NULL, 19),
+(19, 1, 'Laurie: Sir Klauston te encuentras en una encrucijada. A tu derecha tienes un camino de baldosas negras y rotas con espinas del tamaño de plátanos...\n A tu izquierda hay un camino de tierra con un bosque soleado con luciérnagas. Al fondo se ve un animal pequeño, blanco y parece que esta herido.\n ¿Qué camino elegirás? Piénsalo bien, el destino del reino depende de tí.', 'frank_rol.png','laurie_rol.png', 'habitacion_noche.png', 'hospital_rol.mp3', NULL, 20),
+(20, 1, 'Frank: Según la información recabada hasta el momento creo que voy a elegir....','frank_pensativo.png', 'laurie_rol.png','habitacion_noche.png', 'hospital_rol.mp3', NULL, 21),
+(21, 1, 'Mamá: Laurie deja descansar a la señora Klaus, estará cansada de todo el día y no creo que quiera escuchar vuestras historias.', 'mama_seria.png', 'sra_klaus_sonrisa.png', 'habitacion_noche_sin_abu.png', 'hospital_rol.mp3', NULL, 22),
+(22, 1, 'Señora Klaus: No te preocupes Jennifer, me gusta escuchar sus historias. Me recuerda a las radionovelas de mi juventud.', 'mama_seria.png', 'sra_klaus_sonrisa.png', 'habitacion_noche_sin_abu.png', 'hospital_rol.mp3', NULL, 23),
+(23, 1, 'Laurie: Vale mamá, ya me voy a mi habitación. Buenas noches señora Klaus. Mañana seguiremos por donde lo hemos dejado.', 'laurie_pijama_rol.png', 'sra_klaus_sonrisa.png', 'habitacion_noche.png', 'hospital_rol.mp3', NULL, 24),
+(24, 1, 'Frank: ¡Buenas noches lady Whisksun! Que sueñe con las patitas suaves y peludas de pequeños gatitos.', 'frank_rol.png', 'laurie_pijama_rol.png', 'habitacion_noche.png', 'hospital_rol.mp3', NULL,  25),
+(25, 1, 'Laurie: ¡Buenas noches mamá! ¡Buenas noches papá!', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital_noche.png', 'hospital_noche_triste.mp3', NULL, 276),
+(26, 1, 'Mamá: Buenas noches cariño. Descansa, mañana el Dr. Andrews quiere hacer unas pruebas específicas.', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital.png', 'hospital_noche_triste.mp3', NULL, 27),
+(27, 1, 'Papá: Buenas noches llamita. Mañana podremos traer a lady Wishksun para visitarte.', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital_noche.png','hospital_noche_triste.mp3', NULL, 28),
+(28, 1, 'Laurie: ¡Gracias papá! Estoy deseando ver a mi peludita...', 'laurie_pijama.png', 'mama_papa.png', 'habitacion_hospital_noche.png', 'hospital_noche_triste.mp3', NULL, 29),
+(29, 1, 'Laurie: Uff, tengo un dolor de cabeza horrible, todo me da vueltas.', 'laurie_dolor.png', 'mama_papa_preocupados.png', 'habitacion_hospital_noche.png', 'hospital_noche_triste.mp3', NULL, 30),
+(30, 1, 'Laurie: Qué extraño. Parece que alguien está pidiendo ayuda pero no se ve nada. ¿MAMÁA? ¿PAPAA? ¡MAMAAAAA!', NULL, NULL, 'fondo_negro.png', NULL, 'maquinas_hospital.mp3', 31),
+(31, 1, 'Whisksun: Uff me duele mucho el pecho. Qué golpe me he dado. ¿Dónde estoy?', 'whisk_gata_dolor.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 32),
+(32, 1, 'Whisksun: ¿Pero qué es esto? ¡Tengo patas! ¡Tengo cola! ¡Tengo orejas!', 'whisk_gata_sorpresa.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 33),
+(33, 1, 'Whisksun: Esto no puede estar pasando. Será un sueño. Si me pellizco seguro que despierto. ¡Ahhhh! No funciona. ¿Qué hago ahora?', 'whisk_gata_preocupada.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 34); 
