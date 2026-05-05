@@ -13,39 +13,29 @@ public class ConexionBD {
 
     public static void conectar() {
         try {
-            // 1. REGISTRAR EL DRIVER (Esto es lo que le faltaba al .exe para "despertar")
+    
             Class.forName("org.h2.Driver");
 
-            // 2. RUTA BASE Y CARPETA (Mantenemos tu lógica)
             String rutaBase = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "Laurie's Game";
             File carpeta = new File(rutaBase);
             if (!carpeta.exists()) carpeta.mkdirs();
-
-            // 3. COPIA DE LA BASE DE DATOS (Mantenemos tu lógica de LibGDX)
             File archivoHistoriaLocal = new File(rutaBase, "datos_juego.mv.db");
             
             if (!archivoHistoriaLocal.exists()) {
-                // Buscamos dentro del JAR y copiamos fuera a Documentos
                 com.badlogic.gdx.files.FileHandle assetDB = com.badlogic.gdx.Gdx.files.internal("db/datos_juego.mv.db");
                 com.badlogic.gdx.files.FileHandle destinoDB = com.badlogic.gdx.Gdx.files.absolute(archivoHistoriaLocal.getAbsolutePath());
                 assetDB.copyTo(destinoDB);
                 System.out.println("Archivo de historia copiado a Documentos.");
             }
 
-            // 4. LIMPIEZA DE RUTA PARA H2
-            // Cambiamos las contra-barras "\" por "/" porque H2 es más estable así en las URLs
             String rutaLimpia = rutaBase.replace("\\", "/");
 
-            // 5. CONEXIÓN A HISTORIA (Solo lectura)
             String urlHistoria = "jdbc:h2:file:" + rutaLimpia + "/datos_juego;ACCESS_MODE_DATA=r";
             connHistoria = DriverManager.getConnection(urlHistoria, "", "");
 
-            // 6. CONEXIÓN A PROGRESO (Escritura)
-            // Quitamos el DB_CLOSE_ON_EXIT para evitar el error de "Feature not supported"
             String urlProgreso = "jdbc:h2:file:" + rutaLimpia + "/progreso;AUTO_SERVER=TRUE";
             connProgreso = DriverManager.getConnection(urlProgreso, "", "");
 
-            // 7. INICIALIZACIÓN
             crearTablasProgreso();
             System.out.println("¡Bases de datos conectadas con éxito en: " + rutaLimpia);
 
