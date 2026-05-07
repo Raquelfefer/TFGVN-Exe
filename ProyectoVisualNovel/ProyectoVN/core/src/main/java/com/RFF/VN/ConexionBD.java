@@ -25,7 +25,6 @@ public class ConexionBD {
                 com.badlogic.gdx.files.FileHandle assetDB = com.badlogic.gdx.Gdx.files.internal("db/datos_juego.mv.db");
                 com.badlogic.gdx.files.FileHandle destinoDB = com.badlogic.gdx.Gdx.files.absolute(archivoHistoriaLocal.getAbsolutePath());
                 assetDB.copyTo(destinoDB);
-                System.out.println("Archivo de historia copiado a Documentos.");
             }
 
             String rutaLimpia = rutaBase.replace("\\", "/");
@@ -37,7 +36,6 @@ public class ConexionBD {
             connProgreso = DriverManager.getConnection(urlProgreso, "", "");
 
             crearTablasProgreso();
-            System.out.println("¡Bases de datos conectadas con éxito en: " + rutaLimpia);
 
         } catch (ClassNotFoundException e) {
             System.err.println("Error: No se encontró el Driver de H2. Revisa las dependencias de Gradle.");
