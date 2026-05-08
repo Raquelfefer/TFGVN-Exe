@@ -13,24 +13,27 @@ public class ConexionBD {
 
     public static void conectar() {
         try {
-    
             Class.forName("org.h2.Driver");
+
+            com.badlogic.gdx.files.FileHandle assetDB = com.badlogic.gdx.Gdx.files.internal("db/datos_juego.mv.db");
+            
+            File archivoTemporal = File.createTempFile("historia_tmp_", ".mv.db");
+            
+            archivoTemporal.deleteOnExit(); 
+
+            com.badlogic.gdx.files.FileHandle destinoTemp = com.badlogic.gdx.Gdx.files.absolute(archivoTemporal.getAbsolutePath());
+            assetDB.copyTo(destinoTemp);
+            
+            String rutaTemporal = archivoTemporal.getAbsolutePath().replace(".mv.db", "").replace("\\", "/");
+           
+            String urlHistoria = "jdbc:h2:file:" + rutaTemporal + ";ACCESS_MODE_DATA=r";
+            connHistoria = DriverManager.getConnection(urlHistoria, "", "");
 
             String rutaBase = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "Laurie's Game";
             File carpeta = new File(rutaBase);
             if (!carpeta.exists()) carpeta.mkdirs();
-            File archivoHistoriaLocal = new File(rutaBase, "datos_juego.mv.db");
-            
-            if (!archivoHistoriaLocal.exists()) {
-                com.badlogic.gdx.files.FileHandle assetDB = com.badlogic.gdx.Gdx.files.internal("db/datos_juego.mv.db");
-                com.badlogic.gdx.files.FileHandle destinoDB = com.badlogic.gdx.Gdx.files.absolute(archivoHistoriaLocal.getAbsolutePath());
-                assetDB.copyTo(destinoDB);
-            }
 
             String rutaLimpia = rutaBase.replace("\\", "/");
-
-            String urlHistoria = "jdbc:h2:file:" + rutaLimpia + "/datos_juego;ACCESS_MODE_DATA=r";
-            connHistoria = DriverManager.getConnection(urlHistoria, "", "");
 
             String urlProgreso = "jdbc:h2:file:" + rutaLimpia + "/progreso;AUTO_SERVER=TRUE";
             connProgreso = DriverManager.getConnection(urlProgreso, "", "");
@@ -68,7 +71,6 @@ public class ConexionBD {
                     + "FOREIGN KEY (Id_usuario) REFERENCES USUARIO(Id_usuario)"
                     + ")");
             
-           
             stmt.execute("CREATE TABLE IF NOT EXISTS HISTORIAL_OPCIONES ("
                     + "Id_historial INT PRIMARY KEY AUTO_INCREMENT,"
                     + "Id_usuario INT,"
@@ -82,5 +84,4 @@ public class ConexionBD {
 
     public static Connection getConnHistoria() { return connHistoria; }
     public static Connection getConnProgreso() { return connProgreso; }
-	
 }
