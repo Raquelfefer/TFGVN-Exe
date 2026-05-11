@@ -111,7 +111,7 @@ public class Repository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 1; 
+        return 0; 
     }
     
     public void actualizarProgreso(int idUsuario, int idCapitulo) {
