@@ -35,4 +35,52 @@ INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Pe
 (30, 1, 'Laurie: Qué extraño. Parece que alguien está pidiendo ayuda pero no se ve nada. ¿MAMÁA? ¿PAPAA? ¡MAMAAAAA!', NULL, NULL, 'fondo_negro.png', NULL, 'maquinas_hospital.mp3', 31),
 (31, 1, 'Whisksun: Uff me duele mucho el pecho. Qué golpe me he dado. ¿Dónde estoy?', 'whisk_gata_dolor.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 32),
 (32, 1, 'Whisksun: ¿Pero qué es esto? ¡Tengo patas! ¡Tengo cola! ¡Tengo orejas!', 'whisk_gata_sorpresa.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 33),
-(33, 1, 'Whisksun: Esto no puede estar pasando. Será un sueño. Si me pellizco seguro que despierto. ¡Ahhhh! No funciona. ¿Qué hago ahora?', 'whisk_gata_preocupada.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 34); 
+(33, 1, 'Whisksun: Esto no puede estar pasando. Será un sueño. Si me pellizco seguro que despierto. ¡Ahhhh! No funciona. ¿Qué hago ahora?', 'whisk_gata_preocupada.png', NULL, 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 34),
+
+
+(34,2, 'Gatito desconocido: ¿Porque gritas? Me has hecho perder el hilo de la canción.', 'whisk_gata_preocupada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 35),
+(35,2, 'Wishksun: Esto debe ser un sueño, tu no eres real. Seguro que si me concentro mucho puedo despertar.', 'whisk_gata_preocupada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 36),
+(36,2, 'Gatito desconocido: ¿Qué no soy real? ¿Te has golpeado muy fuerte la cabeza? Claro que soy real. ¿Si no fuera real podría cantar así de bien?', 'whisk_gata_preocupada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', 'silbido.mp3', 37),
+(37,2, 'Wishksun: Está claro que si no fueras real no podrías cantar tan mal.', 'whisk_gata_dolor.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 38),
+(38,2, 'Gatito desconocido: ¡Oye! ¿Cómo te atreves? Soy el mejor espadachín-cantarín-silbador de todo SilverHollow.', 'whisk_gata_sorpresa.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 39),
+(39,2, 'Gatito desconocido: Otra vez con que esto no es real, aquello no es real. Qué cabezona. Soy 100% blandito y achuchablemente real. Además mi nombre es sir Klauston, caballero peludo. ¿Tu quién eres hechicera?', 'whisk_gata_sorpresa.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 40),
+(40,2, 'Wishksun: ¿Hechicera? Umm supongo que sí lo soy, esta ropa tendrá algo que ver. ¿Puedo hacer magia?', 'whisk_gata_sorpresa.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 41),
+(41,2, 'Sir Klauston: Si tu no lo sabes como voy a saberlo yo. Prueba a lanzar un rayo o hacer levitar una rana.', 'whisk_gata_sorpresa.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 42),
+(42,2, 'Wishksun: No creo que pueda pero podemos probar.\n¡Vaya! Parece qué sí puedo lanzar rayos. Lo de la rana prefiero no probarlo.', 'whisk_gata_concentrada.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', 'hechizo_cargando.mp3', 43),
+(43,2, 'Sir Klauston: ¡Perfecto! Pues adiós gatita, nos vemos al otro lado.', 'whisk_gata_sorprendida.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 44),
+(44,2, 'Laurie: ¿Como? ¿Te vas? ¿Y yo qué hago ahora?', 'whisk_gata_sorprendida.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 45),
+(45,2, 'Sir Klauston: No lo sé. ¿Buscar una rana para hacerla levitar? Yo voy al siguiente pueblo, hay una recompensa de 500 pawin por un monstruo que está aterrorizando al pueblo y donde hay un monstruo allí está Sir Klauston para deshacerse de él. ¿Quieres venir?', 'whisk_gata_pensativa.png', 'klauston_contento.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL , NULL),
+
+(46,2, 'Sir Klauston: ¡Perfecto! Seguro que hacemos buen equipo. Andando milady. Te silbaré una canción por el camino que te animará el alma.', 'whisk_gata_contenta.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', 'silbido.mp3' , 47),
+(47,2, 'Wishksun: ¡Qué remedio!', 'whisk_gata_decepcionada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', 'silbido.mp3' , 48),
+(48,2, 'Unas horas después.', NULL, NULL , 'fondo_negro.png', 'fantasia_misterio.mp3', 'silbido_pasos.mp3' , 49),
+(49,2, 'Aldeano: ¡Socorro! ¡Socorro! ¡Que alguien nos ayude! ¡Ayuda!', 'whisk_gata_sorprendida.png' , 'klauston_heroe.png' , 'aldea.png', 'aldea.mp3', NULL , 50),
+(50,2, 'Sir Klauston: Corre milady debemos ayudar a esos pobres aldeanos. Coge tu ramita y comienza a lanzar rayos.', 'whisk_gata_sorprendida.png' , 'klauston_heroe.png' , 'aldea.png', 'aldea.mp3', NULL , 51),
+(51,2, 'Aldeano: Hay un matacolores en el granero. Se está quedando con todos los colores del pueblo. Ya ha dejado el mercado, y la mitad de las casas sin color. Todo se está muriendo.', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 52),
+(52,2, 'Sir Klauston: No se preocupe buen aldeano. Mi fiel compañera…. A todo esto, ¿cómo te llamas?.', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 53),
+(53,2, 'Wishksun: Umm no lo recuerdo. Recuerdo un gato tricolor. Debía ser yo. Creo que era Wishksun. Sí, mi nombre es Wishksun.', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 54),
+(54,2, 'Sir Klauston: ¡Perfecto! Sir Klauston y Lady Wishksun salvarán al magnífico pueblo de… ¿cómo se llama este pueblo?', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 55),
+(55,2, 'Aldeano: Villa Ovillo, fiel caballero.', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 56),
+(56,2, 'Sir Klauston: Bien, bien. Villa Ovillo no debe temer nada porque nosotros vamos a deshacernos de esa vil criatura y nos llevaremos todo el pescado que queramos.', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 57),
+(57,2, 'Aldeano: Pero, nosotros no tenemos…', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 58),
+(58,2, 'Sir Klauston: No diga nada más, ya hablaremos del pago después. Eso no es lo importante. ¡Vamos al granero! Ese monstruo va a morder el polvo.', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 59),
+(58,2, 'Sir Klauston: No diga nada más, ya hablaremos del pago después. Eso no es lo importante. ¡Vamos al granero! Ese monstruo va a morder el polvo.', 'aldeanos_asustados.png' , 'klauston_whisk.png' , 'aldea.png', 'aldea.mp3', NULL , 59),
+(59,2, 'En el granero de Villa Ovillo', NULL , NULL , 'fondo_negro.jpg', 'aldea.mp3', NULL , 60),
+(60,2, 'Matacolores: ¡COLORES! ¡NECESITO COLORES! ¡GRRRRR!', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , 61),
+(61,2, 'Sir Klauston: Esa vil criatura quiere quedarse con todos los colores del granero. Mira cómo ha dejado la mitad de lugar. Debemos pararlo. Mi espada no parece hacer nada contra la maldita criatura.. ', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , 62),
+(62,2, 'Matacolores: TÚ NO PODER HACER NADA. TODO GRIS. TODO GRIS. NECESITO COLORES.', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , 63),
+(63,2, 'Sir Klauston: Parece que los ataques físicos no le hacen daño. Quizás podamos probar con algo de magia. Wishksun prueba con alguno de tus hechizos, a lo mejor conseguimos algo.', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , 64),
+(64,2, 'Wishksun: No creo que pueda, todavía no se que puedo hacer con este bastón. Ese monstruo parece extraño. ¿Por qué dice que todo es gris?', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , 65),
+(65,2, 'Sir Klauston: Es un monstruo come colores, supongo que si se come los colores todo se ve gris que es lo que quiere, ¿no?', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , 66),
+(66,2, 'Wishksun: ¿Tú crees? Parece un poco triste y desesperado. Podríamos probar a hablar con él. A lo mejor solo quiere un amigo o necesita ayuda.', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , 67),
+(67,2, 'Sir Klauston: Es un monstruo gigante de tinta que solo quiere comerse el pueblo, ¿cómo va a querer un amigo?', 'matacolores.png' , 'klauston_whisk_armados.png' , 'fondo_granero.png', 'pelea.mp3', NULL , NULL),
+
+
+
+
+
+INSERT INTO OPCION (Id_opcion, Id_narracion_ant, Id_narracion_post, Descripcion) VALUES
+(1, 45, 46, 'Iré contigo si después tu me ayudas con mi situación felina, puede que con mis rayos pueda echarte una mano.'),
+(2, 45, 68, 'No puedo ir, debo solucionar primero mi problema peludo.'),
+(3, 67, --, 'Usas tu rayo destructor para derrotar al monstruo.'),
+(3, 67, --, 'Dejas el bastón en el suelo y te acercas poco a poco al monstruo para intentar hablar con él.'),
