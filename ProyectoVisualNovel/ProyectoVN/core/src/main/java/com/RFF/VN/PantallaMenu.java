@@ -51,7 +51,7 @@ public class PantallaMenu implements Screen {
         TextButton btnNuevaPartida = new TextButton("Nueva Partida", skin);
         TextButton btnContinuarPartida = new TextButton("Continuar Partida", skin);
         TextButton btnLogros = new TextButton("Ver Logros", skin);
-        TextButton btnCerrarSesion = new TextButton("Cerrar Sesion", skin);
+        TextButton btnCerrarSesion = new TextButton("Cerrar Sesión", skin);
         TextButton btnSalir = new TextButton("Salir", skin);
 
         if (ultimoId <= 0) {

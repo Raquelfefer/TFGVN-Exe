@@ -95,7 +95,7 @@ public class PantallaLogin implements Screen {
                 String password = campoPassword.getText().trim();
 
                 if (nombre.isEmpty() || password.isEmpty()) {
-                    mensajeEstado.setText("Escribe usuario y contraseña.");
+                    mensajeEstado.setText("Escribe tu usuario y contraseña.");
                     return;
                 }
 

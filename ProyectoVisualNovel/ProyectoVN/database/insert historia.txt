@@ -1,5 +1,6 @@
 INSERT INTO CAPITULO (ID_CAPITULO, NOMBRE) VALUES
-(1, 'Prólogo');
+(1, 'Prólogo'),
+(2, 'Encuentros');
 
 -- P1: EL COMIENZO EN EL HOSPITAL
 INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Personaje_der, Fondo, Musica, Sonido_Efecto, id_nar_post) VALUES 
@@ -39,7 +40,7 @@ INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Pe
 
 
 (34,2, 'Gatito desconocido: ¿Porque gritas? Me has hecho perder el hilo de la canción.', 'whisk_gata_preocupada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 35),
-(35,2, 'Wishksun: Esto debe ser un sueño, tu no eres real. Seguro que si me concentro mucho puedo despertar.', 'whisk_gata_preocupada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 36),
+(35,2, 'Wishksun: Esto debe ser un sueño, tu no eres real. Seguro que si me concentro mucho puedo despertar.', 'whisk_gata_preocupada.png', 'klauston.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 36),
 (36,2, 'Gatito desconocido: ¿Qué no soy real? ¿Te has golpeado muy fuerte la cabeza? Claro que soy real. ¿Si no fuera real podría cantar así de bien?', 'whisk_gata_preocupada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', 'silbido.mp3', 37),
 (37,2, 'Wishksun: Está claro que si no fueras real no podrías cantar tan mal.', 'whisk_gata_dolor.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 38),
 (38,2, 'Gatito desconocido: ¡Oye! ¿Cómo te atreves? Soy el mejor espadachín-cantarín-silbador de todo SilverHollow.', 'whisk_gata_sorpresa.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL, 39),
@@ -50,6 +51,7 @@ INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Pe
 (43,2, 'Sir Klauston: ¡Perfecto! Pues adiós gatita, nos vemos al otro lado.', 'whisk_gata_sorprendida.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 44),
 (44,2, 'Laurie: ¿Como? ¿Te vas? ¿Y yo qué hago ahora?', 'whisk_gata_sorprendida.png', 'klauston_heroe.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 45),
 (45,2, 'Sir Klauston: No lo sé. ¿Buscar una rana para hacerla levitar? Yo voy al siguiente pueblo, hay una recompensa de 500 pawin por un monstruo que está aterrorizando al pueblo y donde hay un monstruo allí está Sir Klauston para deshacerse de él. ¿Quieres venir?', 'whisk_gata_pensativa.png', 'klauston_contento.png', 'valle_verde.png', 'fantasia_misterio.mp3', NULL , NULL),
+
 
 (46,2, 'Sir Klauston: ¡Perfecto! Seguro que hacemos buen equipo. Andando milady. Te silbaré una canción por el camino que te animará el alma.', 'whisk_gata_contenta.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', 'silbido.mp3' , 47),
 (47,2, 'Wishksun: ¡Qué remedio!', 'whisk_gata_decepcionada.png', 'klauston_silbando.png', 'valle_verde.png', 'fantasia_misterio.mp3', 'silbido.mp3' , 48),
@@ -77,10 +79,53 @@ INSERT INTO NARRACION (Id_narracion, Id_capitulo, Descripcion, Personaje_izq, Pe
 
 
 
+(68,2, 'Sir Klauston: ¿Seguro que no quieres venir a vivir una aventura? Podrás aprender mucho de un caballero experimentado como yo.', 'whisk_gata_normal.png' , 'klauston_heroe.png' , 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 69),
+(69,2, 'Wishksun: No puedo entretenerme. Debo encontrar la manera de salir de este lugar. Espero que te vaya bien.', 'whisk_gata_normal.png' , 'klauston_triste.png' , 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 70),
+(70,2, 'Sir Klauston: Buena fortuna, espero que nuestros caminos se vuelvan a encontrar en algún momento. Me caes bien pequeña hechicera.', 'whisk_gata_feliz.png' , 'klauston_heroe.png' , 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 71),
+(71,2, 'Wishksun: Gracias caballero. ¡Mucha suerte!', 'whisk_gata_feliz.png' , 'klauston_heroe.png' , 'valle_verde.png', 'fantasia_misterio.mp3', NULL , 72),
+(72,2, 'Unas horas después.', NULL , NULL , 'fondo_negro.jpg', 'fantasia_misterio.mp3', NULL , 73),
+(73,2, 'Ladrones: ¡Vieja bola de pelo danos todo lo que lleves encima o acabarás peor que un ovillo de lana tras jugar un tigre con ella!', 'ladrones_enfadados.jpg' , 'anciana_asustada.jpg' , 'colinas.png', 'robo.mp3', NULL , 74),
+(74,2, 'Anciana: Por favor no me hagan daño. No tengo nada para daros. Solo tengo mi viejo bastón pero lo necesito para poder andar.', 'ladrones_enfadados.jpg' , 'anciana_asustada.jpg' , 'colinas.png', 'robo.mp3', NULL , 75),
+(75,2, 'Ladrones: Eso nos servirá, tiene algo raro en la punta seguro que por él nos dan algo bueno en el mercado negro.', 'ladrones_enfadados.jpg' , 'anciana_asustada.jpg' , 'colinas.png', 'robo.mp3', NULL , 76),
+(76,2, 'Wishksun: ¡Bellacos! ¡Dejad a esa pobre anciana! Enfrentáos a alguien que al menos pueda defenderse.', 'ladrones_sorpresa.jpg' , 'whisk_enfadada.jpg' , 'colinas.png', 'robo.mp3', NULL , 77),
+(77,2, 'Ladrones: Y ¿quién es esa persona? ¿Está escondido detrás de ti? Jajajajaja', 'ladrones_risa.jpg' , 'whisk_enfadada.jpg' , 'colinas.png', 'robo.mp3', NULL , 78),
+(78,2, 'Wishksun: Yo me enfrentaré a vosotros. Sois unos delincuentes sin escrúpulos, vais a pagar por ello.', 'ladrones_risa.jpg' , 'whisk_concentrada.jpg' , 'colinas.png', 'robo.mp3', 'hechizo_cargando.mp3' , 79),
+(79,2, 'Ladrones: ¡Kevin! Te han cambiado de raza. ¡De acuerdo! ¡De acuerdo! Dejaremos a la abuelita pero déjanos que recojamos el pelo de Kevin. A lo mejor aún podemos ponérselo en el peinador más cercano.', 'ladrones_esfinge.jpg' , 'whisk_enfadada.jpg' , 'colinas.png', 'robo.mp3', NULL , 80),
+(80,2, 'Wishksun: Muy bien, seré benévola al contrario que vosotros. Espero que de ahora en adelante os comportéis como es debido.', 'ladrones_esfinge.jpg' , 'whisk_enfadada.jpg' , 'colinas.png', 'robo.mp3', NULL , 81),
+(81,2, 'Anciana: Muchas gracias joven. Gracias por ayudarme de esos ladrones.', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 82),
+(82,2, 'Wishksun: No ha sido nada. No se puede permitir que esos malnacidos vayan haciendo lo que quieran por ahí. ¿Está usted bien?', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 83),
+(83,2, 'Anciana: Ahora sí. ¿Podrías decirme cuál es el nombre de mi salvadora?', 'anciana.jpg' , 'whisk_pensativa.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 84),
+(84,2, 'Wishksun: Umm no lo recuerdo. Recuerdo un gato tricolor. Debía ser yo. Creo que era Wishksun. Sí, mi nombre es Wishksun.', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 85),
+(85,2, 'Anciana: ¿Wishksun? ¿Seguro que es ese? ¿Podría ser algo como Laurie?', 'anciana.jpg' , 'whisk_sorprendida.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 86),
+(86,2, 'Wishksun: ¿Laurie?¿Laurie? ¡Es verdad! Ese es mi nombre. Gracias amable anciana. Pero, ¿cómo lo sabía?', 'anciana.jpg' , 'whisk_sorprendida.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 87),
+(87,2, 'Anciana: Cosas de la edad. No dicen que el diablo sabe más por viejo que por diablo. Seguro que mis arrugas han ayudado algo.', 'anciana.jpg' , 'whisk_sorprendida.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 88),
+(88,2, 'Wishksun: ¿Cuál es su nombre, amable anciana?', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 89),
+(89,2, 'Anciana: Mi nombre es Miaurta.', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 90),
+(90,2, 'Wishksun: ¿Miaurta? Umm, me suena ese nombre pero ahora mismo no se de que.', 'anciana.jpg' , 'whisk_pensativa.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 91),
+(91,2, 'Miaurta: No te devanes los sesos ahora mismo. Seguro que en el momento necesario lo recordarás.', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 92),
+(92,2, 'Wishksun: Seguro que sí. ¿Eres una hechicera? Ese bastón con la joya al final es parecido al mío.', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 93),
+(93,2, 'Miaurta: Sí, soy hechicera retirada. Mis tiempos de salvar reinos acabaron hace tiempo.', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 94),
+(94,2, 'Wishksun: No diga eso. Siempre es buen momento para seguir haciendo lo que a uno le gusta. A lo mejor podría ayudarme con mi problema de memoría. No sé exactamente qué es, pero sé que no pertenezco a este mundo. ¿Podría ayudarme?', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , 95),
+(95,2, 'Miaurta: ¿Qué no perteneces a este mundo? Qué curioso, a mí me pasa lo mismo desde hace muchos años. Quizá sí que la vieja hechicera jubilada puede hacer  un último viaje de autodescubrimiento. Te acompañaré en tu viaje si te parece bien.', 'anciana.jpg' , 'whisk_sonriente.jpg' , 'colinas.png', 'fantasia_misterio.mp3', NULL , NULL),
+
+
+
+
+
+
+
+
+
 
 
 INSERT INTO OPCION (Id_opcion, Id_narracion_ant, Id_narracion_post, Descripcion) VALUES
 (1, 45, 46, 'Iré contigo si después tu me ayudas con mi situación felina, puede que con mis rayos pueda echarte una mano.'),
 (2, 45, 68, 'No puedo ir, debo solucionar primero mi problema peludo.'),
 (3, 67, --, 'Usas tu rayo destructor para derrotar al monstruo.'),
-(3, 67, --, 'Dejas el bastón en el suelo y te acercas poco a poco al monstruo para intentar hablar con él.'),
+(4, 67, --, 'Dejas el bastón en el suelo y te acercas poco a poco al monstruo para intentar hablar con él.'),
+(5, 95, --, '¡Muchas gracias por acompañarme! Seguro que juntas podremos descubrir que me está pasando.'),
+(6, 95, --, 'No es necesario. No me gustaría molestarla con mis problemas. Seguro que usted ya tiene bastante con los suyos.'),
+
+
+
+

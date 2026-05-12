@@ -100,7 +100,7 @@ public class PantallaLogros implements Screen {
         
         mainTable.add(scroll).width(650).height(450).row();
 
-        TextButton btnVolver = new TextButton("Volver al Menu", skin);
+        TextButton btnVolver = new TextButton("Volver al Menú", skin);
         btnVolver.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {

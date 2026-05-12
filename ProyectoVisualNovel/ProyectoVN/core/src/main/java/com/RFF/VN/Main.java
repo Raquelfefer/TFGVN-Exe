@@ -30,6 +30,12 @@ public class Main extends Game {
     public Music musicaMenu;
     private String nombreMusicaMenu = "";
     
+    private Music musicaSaliente;
+    private Music musicaEntrante;
+    private float fadeTimer = 0;
+    private final float FADE_DURATION = 2.0f; 
+    private boolean isFading = false;
+    
     @Override
     public void create() {
         batch = new SpriteBatch();
@@ -97,21 +103,58 @@ public class Main extends Game {
     }
     
     public void controlarMusicaMenu(String nombreArchivo, boolean reproducir) {
-        if(!reproducir) {
-            if(musicaMenu != null) {
-                musicaMenu.stop();
+        if (!reproducir) {
+            if (musicaMenu != null) {
+                musicaSaliente = musicaMenu;
+                isFading = true;
+                fadeTimer = 0;
                 nombreMusicaMenu = "";
             }
             return;
         }
+
         if (nombreMusicaMenu.equals(nombreArchivo)) return;
-        if (musicaMenu != null) musicaMenu.dispose();
+
+        musicaSaliente = musicaMenu;
         
-        musicaMenu = Gdx.audio.newMusic(Gdx.files.internal("musica/"+ nombreArchivo));
+        musicaMenu = Gdx.audio.newMusic(Gdx.files.internal("musica/" + nombreArchivo));
         musicaMenu.setLooping(true);
-        musicaMenu.setVolume(0.4f);
+        musicaMenu.setVolume(0);
         musicaMenu.play();
+        
+        musicaEntrante = musicaMenu;
         nombreMusicaMenu = nombreArchivo;
+        
+        isFading = true;
+        fadeTimer = 0;
+    }
+    
+    @Override
+    public void render() {
+        super.render(); 
+
+        if (isFading) {
+            fadeTimer += Gdx.graphics.getDeltaTime();
+            float progreso = Math.min(fadeTimer / FADE_DURATION, 1f);
+
+            if (musicaSaliente != null) {
+                musicaSaliente.setVolume(0.3f * (1f - progreso));
+                if (progreso >= 1f) {
+                    musicaSaliente.stop();
+                    musicaSaliente.dispose();
+                    musicaSaliente = null;
+                }
+            }
+
+            if (musicaEntrante != null) {
+                musicaEntrante.setVolume(0.3f * progreso);
+            }
+
+            if (progreso >= 1f) {
+                isFading = false;
+                musicaEntrante = null;
+            }
+        }
     }
 
     @Override
@@ -128,7 +171,6 @@ public class Main extends Game {
         if (musicaMenu != null) musicaMenu.dispose();
     }
     
-    // Getters
     public SpriteBatch getBatch() { return batch; }
     public BitmapFont getFuente() { return fuenteCozy; } 
     public BitmapFont getFuenteTitulo() { return fuenteTitulo; }
