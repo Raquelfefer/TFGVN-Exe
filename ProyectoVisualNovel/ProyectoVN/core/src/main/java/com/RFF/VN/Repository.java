@@ -127,7 +127,8 @@ public class Repository {
   
     
     public NarracionDTO obtenerNarracion(int id) {
-        String sql = "SELECT Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo, Personaje_Izq, Personaje_Der, Musica, Sonido_Efecto FROM NARRACION WHERE Id_narracion = ?";
+        String sql = "SELECT Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo, Personaje_Izq, "
+        		+ "Personaje_Der, Musica, Sonido_Efecto FROM NARRACION WHERE Id_narracion = ?";
         try (PreparedStatement stmt = ConexionBD.getConnHistoria().prepareStatement(sql)) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
