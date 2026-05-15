@@ -22,7 +22,6 @@ public class PantallaRegistro implements Screen {
         this.game = game;
         this.repository = new Repository();
         this.stage = new Stage(new ScreenViewport());
-        
         this.skin = game.skin; 
     }
 
@@ -41,9 +40,14 @@ public class PantallaRegistro implements Screen {
         Label titulo = new Label("Crear Nuevo Usuario", skin, "titulo");
 
         final TextField campoUsuario = new TextField("", skin);
+        
         final TextField campoPassword = new TextField("", skin);
         campoPassword.setPasswordMode(true);
         campoPassword.setPasswordCharacter('*');
+        
+        final TextField campoPasswordRepetir = new TextField("", skin);
+        campoPasswordRepetir.setPasswordMode(true);
+        campoPasswordRepetir.setPasswordCharacter('*');
 
         final SelectBox<String> comboPreguntas = new SelectBox<>(skin);
         comboPreguntas.setItems(
@@ -70,7 +74,10 @@ public class PantallaRegistro implements Screen {
         table.add(new Label("Contraseña:", skin)).left().padRight(10);
         table.add(campoPassword).width(350).pad(5).row();
         
-        table.add(new Label("Pregunta Seg:", skin)).left().padRight(10);
+        table.add(new Label("Repite Contraseña:", skin)).left().padRight(10);
+        table.add(campoPasswordRepetir).width(350).pad(5).row();
+        
+        table.add(new Label("Pregunta Seguridad:", skin)).left().padRight(10);
         table.add(comboPreguntas).width(350).pad(5).row();
         
         table.add(new Label("Respuesta:", skin)).left().padRight(10);
@@ -96,11 +103,17 @@ public class PantallaRegistro implements Screen {
             public void changed(ChangeEvent event, Actor actor) {
                 String nom = campoUsuario.getText().trim();
                 String pass = campoPassword.getText().trim();
+                String pass2 = campoPasswordRepetir.getText().trim();
                 String pre = comboPreguntas.getSelected();
                 String res = campoRespuesta.getText().trim();
 
-                if(nom.isEmpty() || pass.isEmpty() || res.isEmpty()) {
+                if(nom.isEmpty() || pass.isEmpty() || res.isEmpty() || pass2.isEmpty()) {
                     mensajeEstado.setText("Rellena todos los campos.");
+                    return;
+                }
+                
+                if (!pass.equals(pass2)) {
+                    mensajeEstado.setText("Las contraseñas no coinciden.");
                     return;
                 }
 

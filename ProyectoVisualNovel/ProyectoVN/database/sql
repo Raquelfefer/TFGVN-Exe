@@ -2,24 +2,16 @@ DROP DATABASE IF EXISTS VN_database;
 CREATE DATABASE VN_database;
 USE VN_database;
 
--- Crear tabla de Capítulos
-CREATE TABLE CAPITULO (
-    Id_capitulo INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre VARCHAR(100) NOT NULL
-);
-
 -- Crear tabla de Narraciones (Nodos de la historia)
 CREATE TABLE NARRACION (
     Id_narracion INT PRIMARY KEY AUTO_INCREMENT,
-    Id_capitulo INT,
     Descripcion TEXT NOT NULL,
     Id_nar_post INT DEFAULT NULL,
     Fondo VARCHAR(100) DEFAULT 'default_bg.png',
     Personaje_Izq VARCHAR(100) DEFAULT NULL,
     Personaje_Der VARCHAR(100) DEFAULT NULL,
     Musica VARCHAR(100) DEFAULT NULL,
-    Sonido_Efecto VARCHAR(100) DEFAULT NULL,
-    FOREIGN KEY (Id_capitulo) REFERENCES CAPITULO(Id_capitulo)
+    Sonido_Efecto VARCHAR(100) DEFAULT NULL
 );
 
 -- Crear tabla de Opciones (Bifurcaciones)
@@ -40,8 +32,8 @@ CREATE TABLE USUARIO (
     Pregunta_seguridad VARCHAR(255),
     Respuesta_seguridad VARCHAR(255),
     Fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-    Ult_capitulo INT,
-    FOREIGN KEY (Ult_capitulo) REFERENCES CAPITULO(Id_capitulo)
+    Ult_narracion INT,
+    FOREIGN KEY (Ult_narracion) REFERENCES NARRACION(Id_narracion)
 );
 
 -- Tabla de Logros

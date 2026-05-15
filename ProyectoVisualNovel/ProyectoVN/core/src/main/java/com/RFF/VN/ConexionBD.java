@@ -59,7 +59,7 @@ public class ConexionBD {
                     + "Pregunta_seguridad VARCHAR(255),"
                     + "Respuesta_seguridad VARCHAR(255),"
                     + "Fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
-                    + "Ult_capitulo INT DEFAULT 0"
+                    + "Ult_narracion INT DEFAULT 0"
                     + ")");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS LOGRO_CONSEGUIDO ("

@@ -99,13 +99,13 @@ public class Repository {
     }
 
 
-    public int obtenerUltimoCapitulo(int idUsuario) {
-        String sql = "SELECT Ult_capitulo FROM USUARIO WHERE Id_usuario = ?";
+    public int obtenerUltimaNarracion(int idUsuario) {
+        String sql = "SELECT Ult_narracion FROM USUARIO WHERE Id_usuario = ?";
         try (PreparedStatement stmt = ConexionBD.getConnProgreso().prepareStatement(sql)) {
             stmt.setInt(1, idUsuario);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    return rs.getInt("Ult_capitulo");
+                    return rs.getInt("Ult_narracion");
                 }
             }
         } catch (SQLException e) {
@@ -114,10 +114,10 @@ public class Repository {
         return 0; 
     }
     
-    public void actualizarProgreso(int idUsuario, int idCapitulo) {
-        String sql = "UPDATE USUARIO SET Ult_capitulo = ? WHERE Id_usuario = ?";
+    public void actualizarProgreso(int idUsuario, int idNarracion) {
+        String sql = "UPDATE USUARIO SET Ult_narracion = ? WHERE Id_usuario = ?";
         try (PreparedStatement stmt = ConexionBD.getConnProgreso().prepareStatement(sql)) {
-            stmt.setInt(1, idCapitulo);
+            stmt.setInt(1, idNarracion);
             stmt.setInt(2, idUsuario);
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -127,7 +127,7 @@ public class Repository {
   
     
     public NarracionDTO obtenerNarracion(int id) {
-        String sql = "SELECT Id_narracion, Id_capitulo, Descripcion, Id_nar_post, Fondo, Personaje_Izq, "
+        String sql = "SELECT Id_narracion, Descripcion, Id_nar_post, Fondo, Personaje_Izq, "
         		+ "Personaje_Der, Musica, Sonido_Efecto FROM NARRACION WHERE Id_narracion = ?";
         try (PreparedStatement stmt = ConexionBD.getConnHistoria().prepareStatement(sql)) {
             stmt.setInt(1, id);
@@ -139,7 +139,6 @@ public class Repository {
                     return new NarracionDTO(
                         rs.getString("Descripcion"),
                         idSig,
-                        rs.getInt("Id_capitulo"),
                         rs.getString("Fondo"),
                         rs.getString("Personaje_Izq"),
                         rs.getString("Personaje_Der"),
@@ -152,19 +151,6 @@ public class Repository {
             e.printStackTrace();
         }
         return null;
-    }
-    
-    public int obtenerIdInicialPorCapitulo(int idCapitulo) {
-        String sql = "SELECT Id_narracion FROM NARRACION WHERE Id_capitulo = ? ORDER BY Id_narracion ASC LIMIT 1";
-        try (PreparedStatement stmt = ConexionBD.getConnHistoria().prepareStatement(sql)) {
-            stmt.setInt(1, idCapitulo);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) return rs.getInt("Id_narracion");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return -1;
     }
     
     public List<OpcionDTO> obtenerOpciones(int idNarracionActual) {

@@ -1,6 +1,7 @@
 package com.RFF.VN;
 
 import java.util.List;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -37,7 +38,6 @@ public class PantallaJuego implements Screen {
 
     private int idNarracionActual;
     private Integer idSiguienteNarracion;
-    private int capituloActual = -1;
     private boolean mostrandoOpciones = false;
 
     private Image imgFondo;
@@ -57,18 +57,13 @@ public class PantallaJuego implements Screen {
     private int indiceActual = 0;
     private boolean escribiendo = false;
 
-    public PantallaJuego(Main game, int idRecibido, boolean esCapitulo) {
+    public PantallaJuego(Main game, int idNarracion) {
         this.game = game;
         this.repository = new Repository();
         this.stage = new Stage(new ScreenViewport());
         this.skin = game.skin;
-
-        if (esCapitulo) {
-            int idInicial = repository.obtenerIdInicialPorCapitulo(idRecibido);
-            this.idNarracionActual = (idInicial != -1) ? idInicial : 1;
-        } else {
-            this.idNarracionActual = idRecibido;
-        }
+        this.idNarracionActual = idNarracion;
+        
     }
 
     @Override
@@ -187,10 +182,8 @@ public class PantallaJuego implements Screen {
 
             idSiguienteNarracion = datos.idSiguiente;
             
-            if (datos.idCapitulo != capituloActual) {
-                capituloActual = datos.idCapitulo;
-                repository.actualizarProgreso(game.idUsuarioLogueado, capituloActual);
-            }
+            this.idNarracionActual = id;
+            repository.actualizarProgreso(game.idUsuarioLogueado, idNarracionActual);
         }
     }
     
@@ -275,7 +268,7 @@ public class PantallaJuego implements Screen {
         lblAviso.setFontScale(0.6f);
         Label lblNombre = new Label(t, skin);
 
-        tl.add(imgIzquierda).size(32, 32).padRight(10); // Ajusta el size a tu gusto
+        tl.add(imgIzquierda).size(32, 32).padRight(10);
         tl.add(lblAviso);
         tl.add(imgDerecha).size(32, 32).padLeft(10);
         tl.row(); 

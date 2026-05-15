@@ -25,7 +25,6 @@ public class PantallaMenu implements Screen {
         this.game = game;
         this.repository = new Repository();
         this.stage = new Stage(new ScreenViewport());
-        
         this.skin = game.skin; 
     }
 
@@ -43,7 +42,7 @@ public class PantallaMenu implements Screen {
         table.setFillParent(true);
         stage.addActor(table);
 
-        final int ultimoId = repository.obtenerUltimoCapitulo(game.idUsuarioLogueado);
+        final int ultimaNarracionId = repository.obtenerUltimaNarracion(game.idUsuarioLogueado);
 
         Label saludo = new Label("¡Hola, " + game.nombreUsuarioLogueado + "!", skin, "titulo");
         saludo.setFontScale(0.9f);
@@ -54,7 +53,7 @@ public class PantallaMenu implements Screen {
         TextButton btnCerrarSesion = new TextButton("Cerrar Sesión", skin);
         TextButton btnSalir = new TextButton("Salir", skin);
 
-        if (ultimoId <= 0) {
+        if (ultimaNarracionId <= 0) {
             btnContinuarPartida.setDisabled(true);
             btnContinuarPartida.getColor().a = 0.5f; 
         }
@@ -75,7 +74,7 @@ public class PantallaMenu implements Screen {
                 game.controlarMusicaMenu(null, false);
                 repository.actualizarProgreso(game.idUsuarioLogueado, 1);
                 repository.borrarHistorialUsuario(game.idUsuarioLogueado);
-                game.setScreen(new PantallaJuego(game, 1, true));
+                game.setScreen(new PantallaJuego(game, 1));
             }
         });
 
@@ -84,7 +83,7 @@ public class PantallaMenu implements Screen {
             public void changed(ChangeEvent event, Actor actor) {
                 if (!btnContinuarPartida.isDisabled()) {
                     game.controlarMusicaMenu(null, false);
-                    game.setScreen(new PantallaJuego(game, ultimoId, true));
+                    game.setScreen(new PantallaJuego(game, ultimaNarracionId));
                 }
             }
         });

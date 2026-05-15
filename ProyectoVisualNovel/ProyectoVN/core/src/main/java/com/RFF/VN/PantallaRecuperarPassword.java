@@ -22,7 +22,6 @@ public class PantallaRecuperarPassword implements Screen {
         this.game = game;
         this.repository = new Repository();
         this.stage = new Stage(new ScreenViewport());
-        
         this.skin = game.skin; 
     }
 
@@ -48,9 +47,14 @@ public class PantallaRecuperarPassword implements Screen {
         etiquetaPregunta.setColor(Color.valueOf("E8E4D8")); 
 
         final TextField campoRespuesta = new TextField("", skin);
+        
         final TextField campoNuevaPass = new TextField("", skin);
         campoNuevaPass.setPasswordMode(true);
         campoNuevaPass.setPasswordCharacter('*');
+        
+        final TextField campoNuevaPassRepetir = new TextField ("", skin);
+        campoNuevaPassRepetir.setPasswordMode(true);
+        campoNuevaPassRepetir.setPasswordCharacter('*');
 
         final Label mensajeEstado = new Label("", skin);
         
@@ -60,6 +64,7 @@ public class PantallaRecuperarPassword implements Screen {
 
         campoRespuesta.setVisible(false);
         campoNuevaPass.setVisible(false);
+        campoNuevaPassRepetir.setVisible(false);
         btnRestablecer.setVisible(false);
 
         table.center();
@@ -76,9 +81,13 @@ public class PantallaRecuperarPassword implements Screen {
         table.add(lblRes).left().padRight(10);
         table.add(campoRespuesta).width(350).pad(5).row();
         
-        Label lblNew = new Label("Nueva Pass:", skin);
+        Label lblNew = new Label("Nueva Contraseña:", skin);
         table.add(lblNew).left().padRight(10);
         table.add(campoNuevaPass).width(350).pad(5).row();
+        
+        Label lblNewRepeat = new Label("Repite Contraseña:", skin);
+        table.add(lblNewRepeat).left().padRight(10);
+        table.add(campoNuevaPassRepetir).width(350).pad(5).row();
 
         table.add(mensajeEstado).colspan(2).pad(15).row();
 
@@ -98,6 +107,7 @@ public class PantallaRecuperarPassword implements Screen {
                     etiquetaPregunta.setColor(skin.getColor("aguamarina")); 
                     campoRespuesta.setVisible(true);
                     campoNuevaPass.setVisible(true);
+                    campoNuevaPassRepetir.setVisible(true);
                     btnRestablecer.setVisible(true);
                     mensajeEstado.setText("");
                 } else {
@@ -113,9 +123,16 @@ public class PantallaRecuperarPassword implements Screen {
                 String user = campoUsuario.getText().trim();
                 String res = campoRespuesta.getText().trim();
                 String pass = campoNuevaPass.getText().trim();
+                String pass2 = campoNuevaPassRepetir.getText().trim();
 
-                if (res.isEmpty() || pass.isEmpty()) {
-                    mensajeEstado.setText("Rellena la respuesta y la nueva clave.");
+                if (res.isEmpty() || pass.isEmpty() || pass2.isEmpty()) {
+                    mensajeEstado.setText("Rellena todos los campos.");
+                    mensajeEstado.setColor(Color.SCARLET);
+                    return;
+                }
+                
+                if (!pass.equals(pass2)) {
+                    mensajeEstado.setText("Las nuevas contraseñas no coinciden.");
                     mensajeEstado.setColor(Color.SCARLET);
                     return;
                 }
@@ -123,6 +140,9 @@ public class PantallaRecuperarPassword implements Screen {
                 if (repository.actualizarPassword(user, res, pass)) {
                     mensajeEstado.setText("¡Contraseña actualizada con éxito!");
                     mensajeEstado.setColor(skin.getColor("verde_menta"));
+                    campoNuevaPass.setText("");
+                    campoNuevaPassRepetir.setText("");
+                    campoRespuesta.setText("");
                 } else {
                     mensajeEstado.setText("Respuesta incorrecta.");
                     mensajeEstado.setColor(Color.SCARLET);
